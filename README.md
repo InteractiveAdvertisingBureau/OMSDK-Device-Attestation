@@ -1,5 +1,5 @@
 ![IAB Tech Lab](https://drive.google.com/uc?id=10yoBoG5uRETSXRrnJPUDuONujvADrSG1)
-# OM SDK Device Attestation
+# Open Measurement Device Attestation
 
 ## In Progress
 
