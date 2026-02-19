@@ -22,58 +22,58 @@ IAB TECH LAB MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, AS TO T
 
 ## Table of contents 
 
-- Table of Contents
-- Glossary of Terms
-- Executive Summary
-1. Introduction
-  - 1.1. Problem Statement
-  - 1.2. Solution
-2. Considerations
-  - 2.1. Design Principles
-  - 2.2. Device attestation mechanism qualifications
-    - 2.2.1. Defining device attestation
-    - 2.2.2. Root of trust
-3. Roles and Responsibilities
-  - 3.1. Roles
-    - 3.1.1. Client
-    - 3.1.2. Verifier
-    - 3.1.3. Attester
-    - 3.1.4. Issuer
-  - 3.2. Deployment models
-    - 3.2.1. Split Verifier-Attester-Issuer model
-    - 3.2.2. Joint Verifier-Issuer model
-4. Deployment Guidance
-  - 4.1. Verifier Guidance
-    - 4.1.1. Challenging devices
-    - 4.1.2. Verifying tokens
-    - 4.1.3. Privacy Considerations
-  - 4.2. Issuer Guidance
-    - 4.2.1. On-boarding to Attesters
-    - 4.2.2. Issuing Tokens
-    - 4.2.3. Attester communication
-  - 4.3. Attester Guidance
-    - 4.3.1 On-boarding Issuers
-5. Signals and Reporting
-  - 5.1. Signals available for Verifier
-  - 5.2. Token availability expectations
-  - 5.3. Aggregating the attestation signal
-  - 5.4. Layering data from additional contexts
-  - 5.5. Sampling
-    - 5.5.1. Client-Verifier Attestation Request sampling
-    - 5.5.2. Vierifier-Client Challenge Sampling
-  - 5.6. Metrics
-    - 5.6.1. Attestation Eligible Impressions
-    - 5.6.2. Attestation Attempted Rate
-    - 5.6.3. Attested Impression Rate
-    - 5.6.4. Error Rate
-  - 5.7. Auditing Metrics
-    - 5.7.1. Auditing Attestation Eligible Impressions
-  - 5.8. Feedback loop and error handling
-6. Using the Signals
-  - 6.1. Assessing the Volume of Measureable Inventory
-  - 6.2. Establishing Baselines for Normalization
-  - 6.3. Interpreting Seller-level Metrics
-7. Appendix
+- [Table of Contents](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#table-of-contents)
+- [Glossary of Terms](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#glossary-of-terms)
+- [Executive Summary](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#executive-summary)
+1. [Introduction](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#1-introduction)
+  - 1.1. [Problem Statement](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#11-problem-statement)
+  - 1.2. [Solution](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#12-solution)
+2. [Considerations](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#2-considerations)
+  - 2.1. [Design Principles](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#21-design-principles)
+  - 2.2. [Device attestation mechanism qualifications](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#22-device-attestation-mechanism-qualifications)
+    - 2.2.1. [Defining device attestation](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#221-defining-device-attestation)
+    - 2.2.2. [Root of trust](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#222-root-of-trust)
+3. [Roles and Responsibilities](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#3-roles-and-responsibilities)
+  - 3.1. [Roles](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#31-roles)
+    - 3.1.1. [Client](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#311-client)
+    - 3.1.2. [Verifier](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#312-verifier)
+    - 3.1.3. [Attester](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#313-attester)
+    - 3.1.4. [Issuer](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#314-issuer)
+  - 3.2. [Deployment models](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#32-deployment-models)
+    - 3.2.1. [Split Verifier-Attester-Issuer model](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#321-split-verifier-attester-issuer-model)
+    - 3.2.2. [Joint Verifier-Issuer model](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#322-joint-verifier-issuer-model)
+4. [Deployment Guidance](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#4-deployment-guidance)
+  - 4.1. [Verifier Guidance](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#41-verifier-guidance)
+    - 4.1.1. [Challenging devices](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#411-challenging-devices)
+    - 4.1.2. [Verifying tokens](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#412-verifying-tokens)
+    - 4.1.3. [Privacy Considerations](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#413-privacy-considerations)
+  - 4.2. [Issuer Guidance](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#42-issuer-guidance)
+    - 4.2.1. [On-boarding to Attesters](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#421-on-boarding-to-attesters)
+    - 4.2.2. [Issuing Tokens](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#422-issuing-tokens)
+    - 4.2.3. [Attester communication](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#423-attester-communication)
+  - 4.3. [Attester Guidance](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#43-attester-guidance)
+    - 4.3.1 [On-boarding Issuers](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#431-on-boarding-issuers)
+5. [Signals and Reporting](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#5-signals-and-reporting)
+  - 5.1. [Signals available for Verifier](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#51-signals-available-for-verifier)
+  - 5.2. [Token availability expectations](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#52-token-availability-expectations)
+  - 5.3. [Aggregating the attestation signal](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#53-aggregating-the-attestation-signal)
+  - 5.4. [Layering data from additional contexts](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#54-layering-data-from-additional-contexts)
+  - 5.5. [Sampling](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#55-sampling)
+    - 5.5.1. [Client-Verifier Attestation Request sampling](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#551-client-verifier-attestation-request-sampling)
+    - 5.5.2. [Verifier-Client Challenge Sampling](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#552-verifier-client-challenge-sampling)
+  - 5.6. [Metrics](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#56-metrics)
+    - 5.6.1. [Attestation Eligible Impressions](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#561-attestation-eligible-impressions)
+    - 5.6.2. [Attestation Attempted Rate](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#562-attestation-attempted-rate)
+    - 5.6.3. [Attested Impression Rate](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#563-attested-impression-rate)
+    - 5.6.4. [Error Rate](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#564-error-rate)
+  - 5.7. [Auditing Metrics](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#57-auditing-metrics)
+    - 5.7.1. [Auditing Attestation Eligible Impressions](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#571-auditing-attestation-eligible-impressions)
+  - 5.8. [Feedback loop and error handling](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#58-feedback-loop-and-error-handling)
+6. [Using the Signals](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#6-using-the-signals)
+  - 6.1. [Assessing the Volume of Measureable Inventory](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#61-assessing-the-volume-of-measurable-inventory)
+  - 6.2. [Establishing Baselines for Normalization](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#62-establishing-baselines-for-normalization)
+  - 6.3. [Interpreting Seller-level Metrics](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#63-interpreting-seller-level-metrics)
+7. [Appendix](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#7-appendix)
 
 ## Glossary of Terms 
 
@@ -124,7 +124,7 @@ The following principles have guided the design and development of this mechanis
 - As with the rest of the OM SDK, no user identity information should be required for the software to run. 
 - This mechanism leverages the Privacy Pass protocol, as it is a device attestation mechanism already supported by some device manufacturers. Existing device attestation mechanisms may not be automatically compatible. 
 - Practice data minimization from the onset. This solution design seeks to minimize data assets available even in attestation responses, such as keeping signals simple. Furthermore, there are legitimate reasons as to why a device attestation signal may not be available on demand, so systems should not expect a response from every attestation request. 
-- Device Attestation cannot be a gating criterion. The intention is to create a positive signal instead of a negative one, which means approaching the problem differently. Coverage of the device attestation signal cannot be assumed to be 100%. For example, legacy active devices may not have the capability. This means the focus will be on data aggregated at the Seller level instead of at the user or device level, and no persistent tracking of devices is enabled. For details on how to use the signal, see section 5. Signals and Reporting. 
+- Device Attestation cannot be a gating criterion. The intention is to create a positive signal instead of a negative one, which means approaching the problem differently. Coverage of the device attestation signal cannot be assumed to be 100%. For example, legacy active devices may not have the capability. This means the focus will be on data aggregated at the Seller level instead of at the user or device level, and no persistent tracking of devices is enabled. For details on how to use the signal, see section [5. Signals and Reporting](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#5-signals-and-reporting). 
 - To preserve user experience, device attestation should not be done pre-bid. This, too, feeds into the intention that signal data shall be aggregated at a Seller-level. 
 - In support of prior principles, sampling should be the default, instead of requesting attestation on every impression. Sampling will also allow for robustness of signal at the aggregated Seller-level. 
 - OM SDK should enable independent verification of the device attestation signal on ad impressions similar to impression/viewability measurement. 
@@ -141,13 +141,13 @@ The following principles have guided the design and development of this mechanis
 
  For robust security, there should be a hardware-backed root of trust (RoT) used by the device for authenticating itself with the Attester. This is typically implemented through a Trusted Platform Module (TPM) that hosts a device-specific private key. The Client-Attester protocol must involve the device using its unique private key for signing arbitrary data/challenges that the Attester can verify. The Client-Attester protocol should not result in an attestation of an emulator running the device OS. 
 
- ### 3. Roles and Responsibilities 
+ ## 3. Roles and Responsibilities 
 
 The device attestation mechanism operates purely in the measurement context and is intended to be used in a sampled manner to uncover Sellers of spoofed device inventory. The mechanism intentionally adopts a restrictive approach in terms of prescribing the Privacy Pass protocol as the underlying protocol to be used for device attestation in addition to specific deployment models, roles, and privacy + security properties, the specifics of which are detailed in the roles section below. This is because industry trust in the mechanism hinges on the mechanism operating robustly across as many devices as possible at a certain minimum bar when it comes to performance, privacy, and security. A weak implementation that has an exploitable vulnerability jeopardizes trust in the overall mechanism and can be disastrous to broad adoption. Over time, once real-world data becomes available, these policies can be updated to support additional device attestation protocols and modalities as appropriate. 
 
 There should be minimal dependency on the good intentions of supply chain participants. Effectively, parties with an incentive to subvert this mechanism should not be able to exercise control over it. 
 
-#### 3.1. Roles 
+### 3.1. Roles 
 
 The Privacy Pass protocol defines 4 roles – Client, Origin, Attester, and Issuer. Since the Origin role is primarily intended to be played by an entity responsible for verification, we rename it to Verifier to facilitate understanding and recollection. Effectively, that makes the roles Client, Verifier, Attester, and Issuer respectively. Role descriptions and examples in the OM SDK-enabled device attestation context follow. 
 
@@ -171,11 +171,11 @@ The Attester is the device manufacturer that attests to the authenticity of thei
 
 #### 3.1.4. Issuer 
 
-The Issuer is responsible for signing Privacy Pass token requests (token issuance) from the Attester. Verifiers can work with any Privacy Pass token Issuer onboarded on to the Attesters for relevant devices the Verifiers seek to verify. Verifiers choose Issuers they can trust but a Verifier may also choose to operate in the added role of an Issuer if they are so inclined (refer to section 3.2.2. Joint Verifier-Issuer model). 
+The Issuer is responsible for signing Privacy Pass token requests (token issuance) from the Attester. Verifiers can work with any Privacy Pass token Issuer onboarded on to the Attesters for relevant devices the Verifiers seek to verify. Verifiers choose Issuers they can trust but a Verifier may also choose to operate in the added role of an Issuer if they are so inclined (refer to section [3.2.2. Joint Verifier-Issuer model](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#322-joint-verifier-issuer-model)). 
 
 Issuers should only issue tokens for Attesters if and only if they have validated the attestation mechanism via both review and testing. The Issuer evaluates how the attestation mechanism reflects the Attester’s definition of an authentic device, and how the attestation mechanism guarantees that a device is authentic by that standard. 
 
-As part of examining the attestation mechanism, the Issuer should identify the signals used by the attestation mechanism and determine how those signals might be faked or modified. The Issuer should use this information to create tests from both real and fake devices, to check that the Attester’s device attestation implementation meets stated requirements in 4.2.1. On-boarding to Attesters. 
+As part of examining the attestation mechanism, the Issuer should identify the signals used by the attestation mechanism and determine how those signals might be faked or modified. The Issuer should use this information to create tests from both real and fake devices, to check that the Attester’s device attestation implementation meets stated requirements in [4.2.1. On-boarding to Attesters](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#421-on-boarding-to-attesters). 
 
 The Issuer is not responsible for determining the validity of any given issuance request, since the Issuer will not have access to any Client-specific information. The Issuer instead is responsible for determining the validity of the attestation mechanism. 
 
@@ -191,7 +191,7 @@ The entities playing the Verifier, Attester, and Issuer roles are all distinct. 
 
 The same entity plays the roles of Verifier and Issuer. An example of this is an Ad Verification company playing the role of both the Verifier and the Issuer. The device manufacturer plays the role of the Attester. Ultimately the Attester selects the Issuers that they onboard, but this model offers more control of the chain of trust to the Verifier. Per section 4.3 of RFC 9576 (Privacy Pass Architecture), Issuers that produce tokens for only one Verifier are not suitable in this model, since an Attester can potentially infer the Verifier from a token request. 
 
-## 4. Deployment Guidance 4.1. Verifier Guidance 
+## 4. Deployment Guidance 
 
 ### 4.1. Verifier Guidance
 
@@ -199,13 +199,13 @@ The same entity plays the roles of Verifier and Issuer. An example of this is an
 
 Verifiers can choose to challenge Clients randomly against Attestation Requests or apply intelligence based on various approaches, including information it may have about the specific Seller or Client in question. The attestation signal confidence at a Seller level can be built over time and a sliding window can be maintained around Seller-level attestation data, issuing challenges to maintain signal confidence over time. Since device-specific rate limits on responses to challenges is not public information, it is possible that responses to challenges will not be received when rate limited, which should become apparent over time. 
 
-Refer to section 3.2. Deployment models for details. Verifiers may operate in the single or joint model. If the Verifier is operating in the single model, the expectation is that the Verifier tests the Issuer on an annual basis. 
+Refer to section [3.2. Deployment models](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#421-on-boarding-to-attesters) for details. Verifiers may operate in the single or joint model. If the Verifier is operating in the single model, the expectation is that the Verifier tests the Issuer on an annual basis. 
 
 In order to limit how long a challenge will be accepted by the Verifier, it is recommended to include the `max-age` token challenge parameter with a value of 2 minutes as defined in section 2.1.2 of RFC 9577 (Privacy Pass HTTP Authentication Scheme). 
 
 #### 4.1.2. Verifying tokens 
 
-Since this mechanism operates in the measurement context, there is no urgency to verify tokens in real-time. Tokens can be collected and verified offline. When token challenges are issued with the `max-age` parameter as defined in section 4.1.1. Challenging devices, tokens should only be considered valid if they have been received before the time limit defined in `max-age`. The Verifier should consider successful token challenges received before the defined `max-age` value to be valid. A token received after the `max-age` will be considered a Missing Token. 
+Since this mechanism operates in the measurement context, there is no urgency to verify tokens in real-time. Tokens can be collected and verified offline. When token challenges are issued with the `max-age` parameter as defined in section [4.1.1. Challenging devices](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#411-challenging-devices), tokens should only be considered valid if they have been received before the time limit defined in `max-age`. The Verifier should consider successful token challenges received before the defined `max-age` value to be valid. A token received after the `max-age` will be considered a Missing Token. 
 
 #### 4.1.3. Privacy Considerations 
 
@@ -219,7 +219,7 @@ Issuers should assure themselves of Attesters being able to robustly verify thei
 
 Issuers should re-review attestation mechanisms at least once a year. Issuers should not issue tokens for any attestation mechanisms that require user interaction for the attestation flow to be completed. To be clear, the user should not have to actively participate in the ad experience for the attestation mechanism to complete. 
 
-While Issuers hold Attesters accountable, Verifiers hold Issuers accountable. More guidance for Verifiers can be found in section 4.1. Verifier Guidance. 
+While Issuers hold Attesters accountable, Verifiers hold Issuers accountable. More guidance for Verifiers can be found in section [4.1. Verifier Guidance](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#41-verifier-guidance). 
 
 #### 4.2.2. Issuing tokens 
 
@@ -248,7 +248,7 @@ Each of these signals is intended to be associated with an ad impression. Since 
 - **Missing Token**: The Client failed to present a Token to the Verifier in the expected timeframe. This could be due to device spoofing, rate limiting, token expiration, or other failures. 
 - **Other Errors**: Errors could be from crypto operation failure, transient system issues, or incorrect implementation of the Privacy Pass RFC by the Verifier. Errors encountered by non-Verifier entities are out of scope, as are Failed Token Verifications. 
 
-For a given impression, there may be multiple Verifiers challenging the Client simultaneously. Due to the sampling-based approach (as discussed in section 5.5 Sampling), a Verifier may also not get the opportunity to challenge or may not receive a token in response to a challenge. Effectively, this means that attestation-based metrics should not be expected to reconcile across distinct Verifiers. Similarly, metrics derived from the attestation signal should also not be expected to reconcile across distinct Verifiers. For more details on providing transparency through metrics, see section 5.6. Metrics. 
+For a given impression, there may be multiple Verifiers challenging the Client simultaneously. Due to the sampling-based approach (as discussed in section [5.5 Sampling](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#55-sampling)), a Verifier may also not get the opportunity to challenge or may not receive a token in response to a challenge. Effectively, this means that attestation-based metrics should not be expected to reconcile across distinct Verifiers. Similarly, metrics derived from the attestation signal should also not be expected to reconcile across distinct Verifiers. For more details on providing transparency through metrics, see section [5.6. Metrics](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#56-metrics). 
 
 ### 5.2. Token availability expectations 
 
@@ -280,7 +280,7 @@ These metrics are measured at the Verifier. For the rate metrics, Verifiers shou
 
 #### 5.6.1. Attestation Eligible Impressions 
 
-To ensure the accuracy of attestation-based metrics, they must be calculated against a qualified baseline of <mark>Attestation Eligible Impressions</mark>. This practice prevents results from being skewed by inventory that does not support device attestation. OM SDK signals the availability of device attestation support to the verification script at the start of each ad session. Refer to section 7. Appendix for examples. 
+To ensure the accuracy of attestation-based metrics, they must be calculated against a qualified baseline of <mark>Attestation Eligible Impressions</mark>. This practice prevents results from being skewed by inventory that does not support device attestation. OM SDK signals the availability of device attestation support to the verification script at the start of each ad session. Refer to section [7. Appendix](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#7-appendix) for examples. 
 
 **Attestation Eligible Impressions = Impressions from device attestation-supported ad sessions**
 
@@ -318,8 +318,8 @@ The error rate helps to provide clarity on the number of attestations failing du
 
 To provide an auditable measure, Verifiers can reconcile <mark>Attestation Eligible Impressions</mark> against their own measure of impressions that should be device attestation-capable. This requires capturing and checking two conditions for each eligible ad session: 
 
-- **OM SDK Version Requirement**: The impression originates from an app running OM SDK known to support device attestation, which would be versions 1.6 or higher. For the native SDK version, use data.context.app.libraryVersion on sessionStart events. For the JS SDK version, use data.context.omidJsInfo.serviceVersion on sessionStart events. The version is also the key used for baselining the Attestation Attempted Rate (section 6.2 Establishing Baselines for Normalization). 
-- **Supported Environment**: The Client device's operating system and hardware are known to provide the necessary support for the underlying Privacy Pass-based device attestation protocol. The device information can be obtained from the deviceInfo node within the sessionStart event. See examples in 7. Appendix for more details. 
+- **OM SDK Version Requirement**: The impression originates from an app running OM SDK known to support device attestation, which would be versions 1.6 or higher. For the native SDK version, use data.context.app.libraryVersion on sessionStart events. For the JS SDK version, use data.context.omidJsInfo.serviceVersion on sessionStart events. The version is also the key used for baselining the Attestation Attempted Rate (section [6.2 Establishing Baselines for Normalization](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#62-establishing-baselines-for-normalization)). 
+- **Supported Environment**: The Client device's operating system and hardware are known to provide the necessary support for the underlying Privacy Pass-based device attestation protocol. The device information can be obtained from the deviceInfo node within the sessionStart event. See examples in [7. Appendix](https://github.com/InteractiveAdvertisingBureau/OMSDK-Device-Attestation/blob/main/Implementation%20Guidance.md#7-appendix) for more details. 
 
 This process provides an additional layer of assurance in the integrity of the reported metrics. 
 
